@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <form>
+          <div class="form-group">
+            <label for="searchText">Текст для пошуку</label>
+            <input type="text" class="form-control" id="searchText" placeholder="Введіть текст">
+          </div>
+          <div class="form-group">
+            <label for="location">Розташування</label>
+            <input type="text" class="form-control" id="location" placeholder="Введіть розташування">
+          </div>
+          <div class="form-group">
+            <label for="category">Категорія</label>
+            <select class="form-control" id="category">
+              <option>Категорія 1</option>
+              <option>Категорія 2</option>
+              <option>Категорія 3</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Пошук</button>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <div *ngFor="let ad of ads" class="card mb-2">
+          <img src="ad.image" class="card-img-top" alt="Зображення оголошення">
+          <div class="card-body">
+            <h5 class="card-title">{{ ad.title }}</h5>
+            <p class="card-text">{{ ad.address }}</p>
+            <p class="card-text">{{ ad.postedTime }}</p>
+            <p class="card-text">{{ ad.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
